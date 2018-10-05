@@ -1,0 +1,440 @@
+@font-face {
+  font-family: "Cocogoose";
+  src: url(../fonts/cocogoose.otf) format('opentype');
+}
+body {
+  font-family: 'Lato';
+  font-weight: 400;
+  color: #3e3e3e;
+  line-height: 1.2;
+  background-color: #f7f6f4;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+.menu-mobile {
+  background: url("../images/bg-quemsomos.png");
+  padding: 5px;
+}
+#showLeft {
+  display: block;
+  position: fixed;
+}
+.c-hamburger {
+  display: block;
+  position: absolute;
+  right: 0px;
+  top: 13px;
+  z-index: 9999;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.c-hamburger:focus {
+  outline: none;
+}
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 32px;
+  left: 0px;
+  right: 10px;
+  height: 8px;
+  background: #df0016;
+}
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #df0016;
+  content: "";
+}
+.c-hamburger span::before {
+  top: -20px;
+}
+.c-hamburger span::after {
+  bottom: -20px;
+}
+.c-hamburger--htx {
+  background-color: transparent;
+}
+.c-hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+  background-color: transparent;
+}
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+#menu {
+  display: none;
+}
+#banner h1 {
+  font-size: 55px;
+  font-family: "Lato";
+  font-weight: 900;
+  color: #ebebeb;
+  text-transform: uppercase;
+}
+#banner p {
+  font-size: 17px;
+  font-family: "Lato";
+  font-weight: 400;
+  color: #ebebeb;
+}
+#banner .swiper-container {
+  width: 100%;
+  height: 550px;
+}
+#banner .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#banner .slide1 {
+  background-image: url("../images/banner.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#banner .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #a4a4a4;
+  opacity: 1;
+}
+#banner .swiper-pagination-bullet-active {
+  background-color: #fce200;
+}
+#empresa {
+  background: #fdda03;
+  background-image: url("../images/bg-quemsomos.png");
+  padding-top: 30px;
+  padding-bottom: 50px;
+  text-align: left;
+}
+#empresa h3 {
+  font-size: 38px;
+  font-family: "Lato";
+  font-weight: 900;
+  color: #3e3e3e;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-left: -40px;
+  margin-bottom: 20px;
+}
+#empresa .resume {
+  background-image: url("../images/resume.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 30px 20px;
+  width: 260px;
+  float: right;
+  font-family: "Helvetica Neue";
+  text-align: left;
+}
+#empresa .resume p {
+  font-size: 14px;
+}
+#empresa .resume p span {
+  font-size: 12px;
+  font-weight: 700;
+}
+#empresa .historia {
+  margin-top: 20px;
+  padding-right: 10%;
+  text-align: justify;
+}
+#empresa article {
+  margin-top: 55px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 12px;
+  width: 250px;
+  height: 220px;
+  padding: 30px 30px;
+  text-align: left;
+}
+#empresa .visao {
+  background-image: url("../images/visao.png");
+}
+#empresa .missao {
+  background-image: url("../images/missao.png");
+}
+#empresa .valores {
+  background-image: url("../images/valores.png");
+}
+#curta {
+  background-color: #df0016;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  text-align: center;
+  color: #f7f6f4;
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 45px;
+}
+#redessociais {
+  background-color: #f7f6f4;
+}
+#redessociais .like {
+  margin-top: -50px;
+}
+#contato {
+  background-color: #f7f6f4;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+#contato #resposta {
+  display: none;
+}
+#contato h2 {
+  font-size: 68px;
+  font-family: "Lato";
+  font-weight: 900;
+  color: #3e3e3e;
+  text-transform: uppercase;
+  text-align: center;
+}
+#contato hr {
+  width: 70px;
+  height: 8px;
+  background-color: #df0016;
+  margin: 15px auto 60px;
+}
+#contato .form-control {
+  border: 1px solid #e8e8e8;
+  border-radius: 18px 5px 18px 5px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+#contato #mensagem {
+  resize: none;
+  margin-bottom: 0px;
+  min-height: 158px;
+}
+#contato .form-control::-webkit-input-placeholder {
+  font-size: 18px;
+  font-family: "Cocogoose";
+  color: #b0b0b0;
+}
+#contato .form-control::-moz-placeholder {
+  font-size: 18px;
+  font-family: "Cocogoose";
+  color: #b0b0b0;
+}
+#contato .form-control:-ms-input-placeholder {
+  font-size: 18px;
+  font-family: "Cocogoose";
+  color: #b0b0b0;
+}
+#contato .form-control::placeholder {
+  font-size: 18px;
+  font-family: "Cocogoose";
+  color: #b0b0b0;
+}
+#contato #enviar {
+  border-radius: 10px 5px;
+  background-color: #df0016;
+  float: right;
+  margin-top: -25px;
+  margin-right: -15px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: "Lato";
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+#contato .informacoes {
+  border-left: 7px solid #df0016;
+  padding: 10px 5px 5px 35px;
+}
+#contato .informacoes .telefone {
+  font-size: 24px;
+  font-family: "Helvetica Neue";
+  color: #3e3e3e;
+  font-weight: bold;
+}
+#contato .informacoes .email,
+#contato .informacoes .endereco {
+  font-size: 16px;
+  font-family: "Helvetica Neue";
+  color: #3e3e3e;
+  font-weight: bold;
+  line-height: 1.2;
+}
+#contato .informacoes .email:hover,
+#contato .informacoes .endereco:hover {
+  text-decoration: none;
+}
+#mapa #map {
+  height: 350px;
+}
+footer {
+  text-align: center;
+  background-color: #fee31b;
+  font-size: 14px;
+  font-family: "Helvetica Neue";
+  color: #3e3e3e;
+  line-height: 1.2;
+  padding: 25px 5px;
+}
+footer p {
+  margin-bottom: 0px;
+}
+footer a {
+  color: #df0016;
+}
+footer a:hover {
+  color: #df0016;
+}
+@media (min-width: 1200px) {
+  .menu-mobile {
+    display: none;
+  }
+  body {
+    padding-top: 90px;
+  }
+  .c-hamburger,
+  #showLeft {
+    display: none;
+  }
+  #menu {
+    display: block;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-height: 100px;
+    padding-top: 0px;
+  }
+  #menu .amarelo {
+    background-image: url("../images/bg-quemsomos.png");
+    border-bottom: 8px solid #df0016;
+    height: 100px;
+  }
+  #menu .amarelo a {
+    color: #df0016;
+    font-size: 18px;
+    font-family: "Lato";
+    font-weight: 400;
+  }
+  #menu .diagonal-right {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 89px 43px;
+    border-color: transparent transparent #df0016 transparent;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 42px;
+    height: 89px;
+  }
+  #menu .diagonal-left {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 89px 43px 0 0;
+    border-color: #df0016 transparent transparent transparent;
+  }
+  #menu .vermelho {
+    background-color: #df0016;
+    position: relative;
+  }
+  #menu .nav-item {
+    margin-right: 15px;
+  }
+  #menu .btn {
+    border: 1px dashed #fff;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Lato";
+    font-weight: 400;
+    margin-top: 32px;
+    text-transform: uppercase;
+  }
+  #menu .navbar-nav {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+}
+@media (max-width: 992px) {
+  #banner h1 {
+    font-size: 30px;
+  }
+  #banner .swiper-container {
+    width: 100%;
+    height: 350px;
+  }
+  #empresa .resume,
+  #empresa article {
+    float: none;
+    margin: 10px auto;
+    text-align: left;
+  }
+  #empresa .historia {
+    padding: 5%;
+  }
+  #redessociais .like {
+    margin-top: 10px;
+  }
+  #curta {
+    font-size: 30px;
+  }
+}
